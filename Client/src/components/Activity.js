@@ -38,6 +38,8 @@ const Activity = ({ userActivityData }) => {
 
   const ACTIVITY_CLASS = new UserActivity(userActivityData);
 
+  // Create activity graph with Recharts
+
   return (
     <>
       <StyledActivity className="activity">

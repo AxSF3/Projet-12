@@ -19,6 +19,8 @@ const Performance = ({ performanceData }) => {
 
   const PERFORMANCE_CLASS = new UserPerformance(performanceData);
  
+  // Create performance graph with Recharts
+
   return (
     <StyledPerformance>
     

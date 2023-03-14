@@ -17,6 +17,7 @@ import Performance from "./Performance";
 import AverageSession from "./AverageSession";
 import Activity from "./Activity";
 
+
 // JS Class
 import User from "../class/User";
 
@@ -69,6 +70,8 @@ function Dashboard() {
         getUserById?.keyData.lipidCount
       )
     : "";
+
+    // Create every graph with data
 
   return (
     <StyledDashboard className="dashboard">

@@ -1,5 +1,7 @@
 class UserActivity {
 
+  // Retrieve the data of the sessions
+
   constructor(data) {
     this._activities = data.sessions.map((session) => {
       return {

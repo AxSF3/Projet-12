@@ -15,6 +15,7 @@ import Userindex from "./pages/Userindex";
 // Components
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
+import Erreur404 from "./components/404";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -26,6 +27,7 @@ ReactDOM.render(
         <Routes>
           <Route index element={<Home />} />
           <Route path="/:userswitch/:id" element={<Userindex />} />
+          <Route path="*" element={<Erreur404 />}/>
 
         </Routes>
       </ThemeProvider>

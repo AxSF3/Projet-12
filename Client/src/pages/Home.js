@@ -8,6 +8,8 @@ import { StyledHome } from "./styles/Home.styled";
 const Home = () => {
   const navigate = useNavigate();
 
+  // User token
+
   const SetUserToken = (user, id) => {
     localStorage.removeItem("accessToken");
     localStorage.setItem("accessToken", id);

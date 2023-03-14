@@ -1,3 +1,5 @@
+// Retrieve the main user info (first name, last name, today score)
+
 class User {
 
   constructor(
@@ -36,6 +38,8 @@ class User {
   get arrayOfPercentScore() {
     return this.calcScore();
   }
+
+  // Calulate score
 
   calcScore() {
 

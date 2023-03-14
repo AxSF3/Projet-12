@@ -1,6 +1,8 @@
 class UserAverageSession {
 
   constructor(averageSessions) {
+
+     // Retrieve the data of the average sessions
  
     this._averageSessions = averageSessions.sessions.map((session) => {
       return {

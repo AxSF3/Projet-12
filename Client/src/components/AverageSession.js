@@ -21,6 +21,8 @@ const AverageSession = ({ averageSessionsData }) => {
 
   const AVERAGE_SESSIONS_CLASS = new UserAverageSession(averageSessionsData);
 
+  // Create average session graph with Recharts
+
   return (
     <>
       <StyledAverageSession className="average-session">

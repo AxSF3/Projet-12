@@ -23,6 +23,8 @@ const RenderLegend = () => {
 
 const Score = ({ scoreData }) => {
 
+  // Create score graph with Recharts
+
   return (
     <StyledScore className="score">
       <ResponsiveContainer width="100%" height="100%">
