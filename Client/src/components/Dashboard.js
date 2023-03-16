@@ -18,7 +18,6 @@ import AverageSession from "./AverageSession";
 import Activity from "./Activity";
 import Erreur404 from "./404";
 
-
 // JS Class
 import User from "../class/User";
 
@@ -29,40 +28,31 @@ import chicken from "../design/chicken.svg";
 import cheeseburger from "../design/cheeseburger.svg";
 import apple from "../design/apple.svg";
 
-
 function Dashboard() {
   let { id } = useParams();
   let { userswitch } = useParams();
-  const token = localStorage.getItem("accessToken");
   const [userData, setUserData] = useState(false);
-  const [getUserActivityById, setgetUserActivityById] = useState({});
-  const [getUserAverageSessionById, setgetUserAverageSessionById] = useState(
-    {}
-  );
-  const [getUserPerformanceById, setgetUserPerformanceById] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const fetch = async (id, userswitch) => {
-      const userData = await getUser(id, userswitch);
-      console.log(userData)
-      setUserData(userData);
-      /*const ACTIVITY = await getActivity(id, userswitch);
-      const AVERAGE_SESSIONS = await getAverageSessions(id, userswitch);
-      const PERFORMANCE = await getPerformance(id, userswitch);
-
-      setgetUserById(USER);
-      setgetUserActivityById(ACTIVITY);
-      setgetUserAverageSessionById(AVERAGE_SESSIONS);
-      setgetUserPerformanceById(PERFORMANCE);*/
-      setIsLoading(false);
-    };
-    fetch(id, userswitch);
-  }, [userData, id, userswitch]);
+    loadUserData();
+  });
 
   if(userData === null || userData === undefined) return <Erreur404/>;
 
 console.log(userData)
+
+  const loadUserData = async () => {
+    const userData = await getUser(id, userswitch);
+    console.log(userData);
+    setUserData(userData);
+    setIsLoading(false);
+  };
+
+  if (userData === null || userData === undefined) return <Erreur404 />;
+
+  console.log(userData);
+
   const USER_CLASS = !isLoading
     ? new User(
         userData.USER.userInfos.firstName,
@@ -75,9 +65,6 @@ console.log(userData)
         userData.USER?.keyData.lipidCount
       )
     : "";
-
-    // Create every graph with data
-
 
   return (
     <StyledDashboard className="dashboard">

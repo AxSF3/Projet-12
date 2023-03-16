@@ -45,7 +45,10 @@ async function getURL(id, userswitch, uri) {
   return userData;
 }
 
+  
+
 async function getUser(id, userswitch) {
+  console.log('mmmm')
   return await getURL(id, userswitch, "");
 }
 
